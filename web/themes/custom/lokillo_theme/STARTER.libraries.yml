@@ -1,0 +1,11 @@
+global:
+  version: VERSION
+  css:
+    base:
+      css/lokillo_theme.css: {}
+  js:
+    js/lokillo_theme.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/modernizr
