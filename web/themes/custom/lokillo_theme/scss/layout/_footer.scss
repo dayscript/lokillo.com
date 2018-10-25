@@ -1,1 +1,46 @@
-// Non-modular or client styles for .l-footer region.
+.footer{
+  background-image: url("../images/bg-footer.jpg");
+  background-size: cover;
+  .footer-container{
+    padding: 36px 0;
+  }
+  h2{
+    position: relative;
+    display: block;
+    margin-bottom: 48px;
+    &:after{
+      content: "";
+      width: 48px;
+      height: 2px;
+      bottom: -16px;
+      left: 50%;
+      background-color: #00f0fd;
+      position: absolute;
+      margin-left: -24px;
+    }
+  }
+  .contact {
+    margin-bottom: 30px;
+  }
+}
+.ciudad-1{
+  text-align: right;
+}
+@media screen and (max-width: 640px){
+  .ciudad-1{
+    text-align: center;
+  }
+}
+.ciudad-2{
+  text-align: left;
+}
+@media screen and (max-width: 640px){
+  .ciudad-2{
+    text-align: center;
+  }
+}
+.bottom-bar{
+  font-size: 0.8em;
+  padding: 12px;
+
+}

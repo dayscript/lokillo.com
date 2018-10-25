@@ -1,0 +1,516 @@
+//Bloque de portada home
+.cover {
+  background-image: url("../images/bg-lokillo.jpg");
+  background-size: cover;
+  .bio {
+    padding: 20px 0 0 0;
+    .info {
+      padding: 58px 0.9375rem;
+
+    }
+  }
+}
+
+//BLoque de video home
+.video-container {
+  background-image: url("../images/bg-video.jpg");
+  background-size: cover;
+  max-height: 540px;
+  .video-player {
+    margin: 24px 0;
+  }
+}
+
+//Galeria Home
+.galeria {
+  padding: 52px 0.9375rem;
+  .columns {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+  h2 {
+    position: relative;
+    margin-bottom: 36px;
+
+    &:after {
+      content: "";
+      width: 48px;
+      height: 2px;
+      bottom: -16px;
+      left: 0;
+      background-color: $primary-color;
+      position: absolute;
+    }
+  }
+}
+
+#block-quicktabsmultimediahomepage {
+  position: relative;
+  ul.quicktabs-tabs {
+    margin-top: 0;
+    position: absolute;
+    top: 65px;
+    right: 0;
+
+    li {
+      display: inline;
+      background: black;
+      list-style-type: none;
+      padding: 16px;
+      border: 1px solid $primary-color;
+      white-space: nowrap;
+      border-radius: 35px;
+      margin: 6px;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      &.active {
+        border: 1px solid $secondary-color;
+        a {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  .views-field-field-image {
+    a {
+      display: block;
+      position: relative;
+      &:hover {
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          background: $black;
+          opacity: 0.4;
+          text-align: center;
+          vertical-align: middle;
+        }
+        &:after {
+          position: absolute;
+          opacity: 1;
+          bottom: 50%;
+          left: 0;
+          right: 0;
+          margin-bottom: -35px;
+          line-height: 1em;
+          font-size: 5em;
+          content: "+";
+          text-align: center;
+          transition: all .3s ease;
+        }
+      }
+      &:after {
+        position: absolute;
+        bottom: 5%;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: -45px;
+        line-height: 1em;
+        font-size: 5em;
+        content: "+";
+        text-align: center;
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: $black;
+        opacity: 0;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+#block-quicktabsmultimediaseccion {
+  .quicktabs-wrapper {
+    text-align: center;
+  }
+  //position: relative;
+  ul.quicktabs-tabs {
+    margin-top: 0;
+    margin-bottom: 40px;
+    //position: absolute;
+    top: 65px;
+    right: 0;
+    li {
+      display: inline;
+      background: black;
+      list-style-type: none;
+      padding: 16px;
+      border: 1px solid $primary-color;
+      white-space: nowrap;
+      border-radius: 35px;
+      margin: 6px;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      &.active {
+        border: 1px solid $secondary-color;
+        a {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+  .views-field-field-image {
+    a {
+      display: block;
+      position: relative;
+      &:hover {
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          background: $black;
+          opacity: 0.4;
+          text-align: center;
+          vertical-align: middle;
+        }
+        &:after {
+          position: absolute;
+          opacity: 1;
+          bottom: 50%;
+          left: 0;
+          right: 0;
+          margin-bottom: -35px;
+          line-height: 1em;
+          font-size: 5em;
+          content: "+";
+          text-align: center;
+          transition: all .3s ease;
+        }
+      }
+      &:after {
+        position: absolute;
+        bottom: 5%;
+        opacity: 0;
+        left: 0;
+        right: 0;
+        margin-bottom: -45px;
+        line-height: 1em;
+        font-size: 5em;
+        content: "+";
+        text-align: center;
+      }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: $black;
+        opacity: 0;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+//Noticias
+.fecha {
+  font-size: 0.9em;
+  color: $steel;
+}
+
+ul.pagination {
+  display: block;
+  margin-left: 0rem;
+  min-height: 0rem;
+  text-align: center;
+  float: right;
+  margin: 40px 0;
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.img {
+  margin-bottom: 14px;
+  img {
+    width: 100%;
+  }
+}
+
+//Titulo de la pagina
+.title-page {
+  min-height: 300px;
+  background: $silver;
+  margin-bottom: 20px;
+  padding-top: 100px;
+  h1 {
+    position: relative;
+    margin: 0 auto;
+    max-width: 75rem;
+    width: 100%;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    &:after {
+      content: "";
+      width: 48px;
+      height: 2px;
+      bottom: -16px;
+      left: 0.9375rem;
+      background-color: $primary-color;
+      position: absolute;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title-page {
+    min-height: 70px;
+    background: $silver;
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+}
+
+.section-galerias {
+  .title-page {
+    background-image: url("../images/bg-galeria.jpg");
+  }
+}
+
+.section-biografia-lokillo-florez, .section-en-lokeando, .section-descargas {
+  .title-page {
+    background-image: url("../images/bg-veapues.jpg");
+  }
+}
+
+.section-rastacuando {
+  .title-page {
+    background-image: url("../images/bg-rastacuando.jpg");
+  }
+}
+
+.section-cotizar-show {
+  .title-page {
+    background-image: url("../images/bg-show.jpg");
+  }
+}
+
+.section-agenda {
+  .title-page {
+    background-image: url("../images/bg-agenda.jpg");
+  }
+}
+
+
+//Cotizador
+.webform-submission-form {
+  padding: 0 4em;
+}
+
+@media screen and (max-width: 640px) {
+  .webform-submission-form {
+    padding: 0 0.8em;
+  }
+}
+
+//Agenda
+.agenda-block{
+  padding: 60px 0;
+  header{
+    clear: both;
+  }
+  footer{
+    clear: both;
+    margin-top: 24px;
+  }
+  strong {
+    color: $primary-color;
+    display: block;
+    float: left;
+    padding-right: 16px;
+    position: relative;
+    margin-bottom: 36px;
+
+    &:after {
+      content: "";
+      width: 48px;
+      height: 2px;
+      bottom: -16px;
+      left: 0;
+      background-color: $primary-color;
+      position: absolute;
+    }
+  }
+
+  .fecha-evento {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 0.9em;
+  }
+  .city {
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+  .country, .place, .hour {
+    font-size: 0.8em;
+  }
+  .evento {
+    margin-bottom: 40px;
+  }
+  h3{
+    padding-left: 0.9375rem;
+    &:after{
+      display: none;
+    }
+  }
+  .hour{
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: 640px) {
+    .hour{
+      margin-bottom: 16px;
+    }
+  }
+}
+.agenda {
+  padding: 60px 0.9375rem;
+  .columns {
+    padding-left: 0rem;
+  }
+  h2 {
+    margin: 0 auto;
+    max-width: 75rem;
+    width: 100%;
+    position: relative;
+    margin-bottom: 36px;
+    float: left;
+    width: 70%;
+
+    &:after {
+      content: "";
+      width: 48px;
+      height: 2px;
+      bottom: -16px;
+      left: 0;
+      background-color: $primary-color;
+      position: absolute;
+    }
+  }
+  .fecha-evento {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: 0.9em;
+  }
+  .city {
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+  .country, .place, .hour {
+    font-size: 0.8em;
+  }
+
+  .evento {
+    margin-bottom: 40px;
+  }
+  #edit-field-fecha-del-evento-value {
+    float: right;
+    width: 30%;
+    position: relative;
+    margin: 5px 0 38px 0;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+  }
+}
+
+//Seccion agenda
+
+nav.pager {
+  display: block;
+  margin: 50px 0 30px 0;
+  ul {
+    margin-left: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 0px;
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .pager__item--previous {
+      float: left;
+    }
+    .pager__item--next {
+      float: right;
+    }
+    .pager__item--current {
+      font-size: 1.4em;
+      color: $secondary-color;
+    }
+  }
+}
+
+.calendar-calendar {
+  margin-bottom: 60px;
+  div.calendar {
+    margin: 1em 0em 1em 0;
+    font-size: 1em;
+  }
+  table thead {
+    background: $black;
+  }
+  th.days {
+    background-color: $black;
+    color: #777;
+    border: 1px solid #5E5E5E;
+    text-transform: uppercase;
+    padding: 6px;
+  }
+  tr {
+    background-color: $black;
+  }
+  .month-view .full td.date-box.today {
+    border-width: 2px 2px 0px 2px;
+    border-style: solid;
+    border-color: $primary-color;
+  }
+  .month-view .full tr td.single-day.today {
+    border-bottom: 2px solid $primary-color;
+  }
+  .month-view .full tr td.today {
+    border-left: 2px solid $primary-color;
+    border-right: 2px solid $primary-color;
+  }
+  .month-view .full td.single-day.empty {
+    background: $black;
+  }
+  .month-view .full tr.single-day .no-entry {
+    background-color: black;
+  }
+  .month-view .full td.date-box.empty {
+    background: #272727;
+  }
+ td.empty {
+    color: #424242;
+   border-color: #505050;
+  }
+  td {
+    border: 1px solid #505050;
+    color: $oil;
+    padding: 6px;
+  }
+  .month-view .full td{
+    vertical-align: top;
+    padding: 6px 6px 6px 6px;
+  }
+
+}

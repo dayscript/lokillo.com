@@ -1,1 +1,84 @@
-// Non-modular or client styles for .l-header region.
+.logo{
+   padding: 10px 0;
+  text-align: left;
+ }
+@media screen and (max-width: 640px){
+  .logo{
+    text-align: center;
+  }
+}
+
+//Menu
+.menu{
+  margin-top: 34px;
+  ul.sf-menu.sf-style-black {
+    float: right;
+    li{
+      padding: 0 10px;
+      &.active-trail{
+        background: $secondary-color;
+        color: $black;
+        border-radius: 20px;
+        a{
+          color: $black;
+        }
+      }
+    }
+    a{
+      text-transform: uppercase;
+      color: $white;
+      font-size: 1em;
+      &:hover{
+        background: $secondary-color;
+        color: $black;
+        border-radius: 20px
+      }
+      &:focus{
+        background: $secondary-color;
+        color: $black;
+        border-radius: 20px
+      }
+    }
+  }
+  .sf-depth-2{
+    a{
+      &:hover{
+        border-radius: 0px;
+      }
+    }
+    ul.sf-menu.sf-style-black li:hover{
+      border-radius: 0px;
+    }
+  }
+}
+@media screen and (max-width: 640px){
+  .menu{
+    margin-top: 4px
+  }
+}
+div.sf-accordion-toggle.sf-style-black a {
+  background: #000000;
+  border: 1px solid #000;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  padding: 1em 1em 1em 1em;
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+//Bloque social
+.social-media-links--platforms{
+  margin-top: 34px;
+  ul{
+    margin-left: 0rem;
+    li{
+      display: inline-block;
+      text-align: right;
+      padding: .2em 0.6em;
+    }
+  }
+}
+ul.social-media-links--platforms.platforms.inline.horizontal{
+  margin-left: 0rem;
+}

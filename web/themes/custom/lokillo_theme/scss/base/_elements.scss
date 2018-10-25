@@ -7,9 +7,51 @@
 
 // Headings
 //------------------------------------------
-// h1, h2, h3,
-// h4, h5, h6 {}
-
+h1, h2, h3,
+h5, h6 {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $primary-color;
+  line-height: 1.2em;
+  &.news{
+    color: $secondary-color;
+    font-size: 1.2em;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+}
+h3{
+  font-weight: 300;
+  color: $white;
+  position: relative;
+  margin-bottom: 36px;
+  &:after{
+    content: "";
+    width: 48px;
+    height: 2px;
+    bottom: -16px;
+    left: 0;
+    background-color: $white;
+    position: absolute;
+  }
+}
+h4 {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  color: $white;
+}
+body{
+  font-size: 1.02em;
+}
+.button{
+  border-radius: 28px;
+  margin: 18px 0;
+}
 // Anchors
 //-----------------------------------------------------------------------------
 // a {}
@@ -38,21 +80,45 @@
 // textarea {
 // }
 
-// input[type="text"],
-// input[type="password"],
-// input[type="date"],
-// input[type="datetime"],
-// input[type="datetime-local"],
-// input[type="month"],
-// input[type="week"],
-// input[type="email"],
-// input[type="number"],
-// input[type="search"],
-// input[type="tel"],
-// input[type="time"],
-// input[type="url"],
-// textarea {
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea {
+border-radius: 8px;
+}
 
-// }
+select {
+  border-radius: 8px;
+}
 
-// select {}
+.panel.callout {
+  padding: 0rem;
+  background: $black;
+}
+
+hr{
+  &.light{
+    border:1px solid $black;
+  }
+}
+fieldset legend {
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #ffda00;
+  margin-bottom: 14px;
+  font-size: 1.2em;
+}
+label{
+  margin: 8px 0;
+}

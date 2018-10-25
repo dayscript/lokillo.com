@@ -72,7 +72,7 @@ gulp.task('watch', function () {
 
   gulp.watch(['scss/*.scss', 'scss/**/*.scss'], ['sass']);
   gulp.watch(['js/*.js'], ['scripts']);
-  gulp.watch(['templates/*.html.twig', '**/*.yml'], ['reload']);
+  //gulp.watch(['templates/*.html.twig', '**/*.yml'], ['reload']);
 });
 
 /**
