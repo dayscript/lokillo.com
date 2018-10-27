@@ -16,15 +16,17 @@
     li{
       padding: 0 10px;
       &.active-trail{
-        background: $secondary-color;
         color: $black;
-        border-radius: 20px;
-        a.is-active, .menuparent{
+        a.menuparent {
           color: $black;
+          background: $secondary-color;
+          border-radius: 20px;
         }
-      }
-      &:hover {
-        background: none !important;
+        a.is-active{
+          color: $black;
+          background: $secondary-color;
+          border-radius: 20px;
+        }
       }
     }
 

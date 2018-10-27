@@ -6910,13 +6910,15 @@ label {
     .menu ul.sf-menu.sf-style-black li {
       padding: 0 10px; }
       .menu ul.sf-menu.sf-style-black li.active-trail {
-        background: #ffda00;
-        color: #000000;
-        border-radius: 20px; }
-        .menu ul.sf-menu.sf-style-black li.active-trail a.is-active, .menu ul.sf-menu.sf-style-black li.active-trail .menuparent {
-          color: #000000; }
-      .menu ul.sf-menu.sf-style-black li:hover {
-        background: none !important; }
+        color: #000000; }
+        .menu ul.sf-menu.sf-style-black li.active-trail a.menuparent {
+          color: #000000;
+          background: #ffda00;
+          border-radius: 20px; }
+        .menu ul.sf-menu.sf-style-black li.active-trail a.is-active {
+          color: #000000;
+          background: #ffda00;
+          border-radius: 20px; }
     .menu ul.sf-menu.sf-style-black a {
       text-transform: uppercase;
       color: #FFFFFF;
