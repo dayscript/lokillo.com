@@ -28,6 +28,9 @@
           border-radius: 20px;
         }
       }
+      &:hover {
+        background: $black;
+      }
     }
 
     a{
