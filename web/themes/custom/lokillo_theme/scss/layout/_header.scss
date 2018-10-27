@@ -19,10 +19,13 @@
         background: $secondary-color;
         color: $black;
         border-radius: 20px;
-        a{
+        a.is-active, .menuparent{
           color: $black;
         }
       }
+    }
+    &:hover {
+      background: none !important;
     }
     a{
       text-transform: uppercase;
