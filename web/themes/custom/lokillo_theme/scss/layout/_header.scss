@@ -23,10 +23,11 @@
           color: $black;
         }
       }
+      &:hover {
+        background: none !important;
+      }
     }
-    &:hover {
-      background: none !important;
-    }
+
     a{
       text-transform: uppercase;
       color: $white;
