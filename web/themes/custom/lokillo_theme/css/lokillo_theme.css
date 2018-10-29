@@ -7278,6 +7278,8 @@ ul.pagination {
       left: 0;
       background-color: #00f0fd;
       position: absolute; }
+  .agenda-block .columns {
+    margin-bottom: 1em; }
   .agenda-block .fecha-evento {
     text-transform: uppercase;
     color: #00f0fd;
