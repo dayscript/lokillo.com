@@ -7059,10 +7059,10 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
         border: 1px solid #ffda00; }
         #block-quicktabsmultimediahomepage ul.quicktabs-tabs li.active a {
           color: #ffda00; }
-  #block-quicktabsmultimediahomepage .views-field-field-image a {
+  #block-quicktabsmultimediahomepage .views-field-field-image a, #block-quicktabsmultimediahomepage .field-node--field-galeria-de-videos a {
     display: block;
     position: relative; }
-    #block-quicktabsmultimediahomepage .views-field-field-image a:hover:before {
+    #block-quicktabsmultimediahomepage .views-field-field-image a:hover:before, #block-quicktabsmultimediahomepage .field-node--field-galeria-de-videos a:hover:before {
       position: absolute;
       top: 0;
       left: 0;
@@ -7073,7 +7073,7 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
       opacity: 0.4;
       text-align: center;
       vertical-align: middle; }
-    #block-quicktabsmultimediahomepage .views-field-field-image a:hover:after {
+    #block-quicktabsmultimediahomepage .views-field-field-image a:hover:after, #block-quicktabsmultimediahomepage .field-node--field-galeria-de-videos a:hover:after {
       position: absolute;
       opacity: 1;
       bottom: 50%;
@@ -7087,7 +7087,7 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
       -webkit-transition: all .3s ease;
       -o-transition: all .3s ease;
       transition: all .3s ease; }
-    #block-quicktabsmultimediahomepage .views-field-field-image a:after {
+    #block-quicktabsmultimediahomepage .views-field-field-image a:after, #block-quicktabsmultimediahomepage .field-node--field-galeria-de-videos a:after {
       position: absolute;
       bottom: 5%;
       opacity: 0;
@@ -7098,7 +7098,7 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
       font-size: 5em;
       content: "+";
       text-align: center; }
-    #block-quicktabsmultimediahomepage .views-field-field-image a:before {
+    #block-quicktabsmultimediahomepage .views-field-field-image a:before, #block-quicktabsmultimediahomepage .field-node--field-galeria-de-videos a:before {
       position: absolute;
       top: 0;
       left: 0;
