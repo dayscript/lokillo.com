@@ -7363,7 +7363,8 @@ nav.pager {
   margin-bottom: 60px; }
   .calendar-calendar div.calendar {
     margin: 1em 0em 1em 0;
-    font-size: 1em; }
+    font-size: 1em;
+    width: 100% !important; }
   .calendar-calendar table thead {
     background: #000000; }
   .calendar-calendar th.days {
@@ -7377,7 +7378,8 @@ nav.pager {
   .calendar-calendar .month-view .full td.date-box.today {
     border-width: 2px 2px 0px 2px;
     border-style: solid;
-    border-color: #00f0fd; }
+    border-color: #00f0fd;
+    background: black; }
   .calendar-calendar .month-view .full tr td.single-day.today {
     border-bottom: 2px solid #00f0fd; }
   .calendar-calendar .month-view .full tr td.today {
