@@ -72,7 +72,7 @@
       }
     }
   }
-  .views-field-field-image, .field-node--field-galeria-de-videos {
+  .views-field-field-image, .field-name-field-galeria-de-videos {
     a {
       display: block;
       position: relative;
@@ -507,9 +507,13 @@ nav.pager {
     color: #424242;
    border-color: #505050;
   }
+  td.date-box {
+    background-color: black;
+  }
   td {
     border: 1px solid #505050;
-    color: $oil;
+    color: #FFF !important;
+    background: black;
     padding: 6px;
   }
   .month-view .full td{
