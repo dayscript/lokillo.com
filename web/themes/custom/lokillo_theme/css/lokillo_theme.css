@@ -7234,7 +7234,7 @@ ul.pagination {
     margin-bottom: 20px;
     padding-top: 10px; } }
 
-.section-galerias .title-page {
+.section-galerias .title-page, .node--type-video-2 .title-page {
   background-image: url("../images/bg-galeria.jpg"); }
 
 .section-biografia-lokillo-florez .title-page, .section-en-lokeando .title-page, .section-descargas .title-page {
