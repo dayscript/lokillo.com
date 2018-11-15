@@ -7403,7 +7403,8 @@ nav.pager {
 .section-cotizar-show .js-form-type-tel .country .country-name {
   color: #999; }
 
-.field-name-field-video .field-item {
+.field-node--field-galeria-de-videos .field-item {
   display: inline-block;
   width: 25%;
+  float: left;
   vertical-align: top; }
