@@ -273,7 +273,7 @@ function sendMail( $destEmail, $subject) {
 	// 	sendMail( "fcaffield2@gmail.com", "Nuevo mensaje de contacto" );
 	// }
 
-	sendMail( "todounlokillo.general@gmail.com,asilva@pianoproducciones.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
+	sendMail( "todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
 
 	header("Location: /gracias-por-su-contacto");
 
