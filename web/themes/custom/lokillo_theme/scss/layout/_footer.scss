@@ -19,13 +19,26 @@
       margin-left: -24px;
     }
   }
+  h3
   .contact {
     margin-bottom: 30px;
+  }
+  h4 {
+    text-transform: none;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .views-field-nothing {
+    .row {
+      margin-bottom: 2em;
+    }
   }
 }
 .ciudad-1{
   text-align: right;
+  border-right: solid 1px;
 }
+
 @media screen and (max-width: 640px){
   .ciudad-1{
     text-align: center;

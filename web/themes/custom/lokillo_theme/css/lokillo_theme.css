@@ -6983,11 +6983,19 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
       background-color: #00f0fd;
       position: absolute;
       margin-left: -24px; }
-  .footer .contact {
+  .footer h3
+.contact {
     margin-bottom: 30px; }
+  .footer h4 {
+    text-transform: none;
+    font-weight: bold;
+    margin-bottom: 1em; }
+  .footer .views-field-nothing .row {
+    margin-bottom: 2em; }
 
 .ciudad-1 {
-  text-align: right; }
+  text-align: right;
+  border-right: solid 1px; }
 
 @media screen and (max-width: 640px) {
   .ciudad-1 {
