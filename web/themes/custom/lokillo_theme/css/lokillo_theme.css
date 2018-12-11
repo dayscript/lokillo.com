@@ -6834,14 +6834,6 @@ h3 {
   color: #FFFFFF;
   position: relative;
   margin-bottom: 36px; }
-  h3:after {
-    content: "";
-    width: 48px;
-    height: 2px;
-    bottom: -16px;
-    left: 0;
-    background-color: #FFFFFF;
-    position: absolute; }
 
 h4 {
   font-family: 'Lato';
@@ -6849,7 +6841,9 @@ h4 {
   font-weight: normal;
   text-transform: uppercase;
   line-height: 1.2em;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  font-size: 1rem;
+  height: 60px; }
 
 body {
   font-size: 1.02em; }
@@ -6967,7 +6961,7 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
 
 .footer {
   position: relative;
-  background-image: url("../images/pie-de-pagina.jpg");
+  background-image: url("../images/pie-de-pagina2.jpg");
   background-size: cover; }
   .footer:before {
     position: absolute;
@@ -6982,16 +6976,9 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
   .footer h2 {
     position: relative;
     display: block;
-    margin-bottom: 48px; }
-    .footer h2:after {
-      content: "";
-      width: 48px;
-      height: 2px;
-      bottom: -16px;
-      left: 50%;
-      background-color: #00f0fd;
-      position: absolute;
-      margin-left: -24px; }
+    margin-bottom: 48px;
+    color: #ffda00;
+    font-size: 1.4rem; }
   .footer h3
 .contact {
     margin-bottom: 30px; }
@@ -7031,8 +7018,9 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
 
 .video-container {
   background-image: url("../images/bg-video.jpg");
-  background-size: cover;
-  max-height: 540px; }
+  background-size: cover; }
+  .video-container h2 {
+    color: #ffda00; }
   .video-container .video-player {
     margin: 24px 0; }
 
@@ -7045,14 +7033,6 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
   .galeria h2 {
     position: relative;
     margin-bottom: 36px; }
-    .galeria h2:after {
-      content: "";
-      width: 48px;
-      height: 2px;
-      bottom: -16px;
-      left: 0;
-      background-color: #00f0fd;
-      position: absolute; }
 
 #block-quicktabsmultimediahomepage {
   position: relative; }
@@ -7233,16 +7213,6 @@ ul.pagination {
     width: 100%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; }
-    .title-page h1:after {
-      content: "";
-      width: 48px;
-      height: 2px;
-      bottom: -16px;
-      left: 0.9375rem;
-      background-color: #00f0fd;
-      position: absolute;
-      padding-left: 0.9375rem;
-      padding-right: 0.9375rem; }
 
 @media screen and (max-width: 640px) {
   .title-page {
@@ -7255,7 +7225,7 @@ ul.pagination {
   background-image: url("../images/bg-galeria.jpg"); }
 
 .section-biografia-lokillo-florez .title-page, .section-en-lokeando .title-page, .section-descargas .title-page {
-  background-image: url("../images/bg-veapues.jpg"); }
+  background-image: url("../images/bg-veapues2.jpg"); }
 
 .section-rastacuando .title-page {
   background-image: url("../images/bg-rastacuando.jpg"); }
@@ -7287,14 +7257,6 @@ ul.pagination {
     padding-right: 16px;
     position: relative;
     margin-bottom: 36px; }
-    .agenda-block strong:after {
-      content: "";
-      width: 48px;
-      height: 2px;
-      bottom: -16px;
-      left: 0;
-      background-color: #00f0fd;
-      position: absolute; }
   .agenda-block .columns {
     margin-bottom: 1em; }
   .agenda-block .fecha-evento {
@@ -7430,3 +7392,139 @@ nav.pager {
   width: 25%;
   float: left;
   vertical-align: top; }
+
+.agenda-nuevo .views-row .info-evento {
+  background: #FFFFFF;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: #000000;
+  position: relative;
+  padding: 38px 15px 15px;
+  font-size: 0.8em; }
+  .agenda-nuevo .views-row .info-evento .mes-evento {
+    position: absolute;
+    top: 8px;
+    left: -10px;
+    background: #ffda00;
+    width: 110px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 0;
+    line-height: 1em; }
+    .agenda-nuevo .views-row .info-evento .mes-evento:before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-right: 10px solid #ffda00;
+      content: ""; }
+  .agenda-nuevo .views-row .info-evento .dia-evento {
+    position: absolute;
+    top: 6px;
+    right: 14px;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1em; }
+  .agenda-nuevo .views-row .info-evento .ciudad-evento, .agenda-nuevo .views-row .info-evento .escenario-evento, .agenda-nuevo .views-row .info-evento .hora-evento {
+    font-weight: bold; }
+  .agenda-nuevo .views-row .info-evento .enlace-compra {
+    margin-top: 10px; }
+    .agenda-nuevo .views-row .info-evento .enlace-compra a {
+      color: #000000;
+      position: relative;
+      padding-left: 26px; }
+      .agenda-nuevo .views-row .info-evento .enlace-compra a:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 18px;
+        content: "+";
+        font-size: 1.2rem;
+        background: #ffda00;
+        border-radius: 15px;
+        line-height: 1em;
+        text-align: center;
+        font-weight: bold; }
+
+.calendario-nuevo .single-day .contents, .calendario-nuevo .multi-day .contents {
+  position: relative; }
+  .calendario-nuevo .single-day .contents .info-evento, .calendario-nuevo .multi-day .contents .info-evento {
+    margin-top: -55px;
+    background: #FFFFFF !important;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #000000;
+    position: relative;
+    padding: 38px 15px 15px;
+    font-size: 0.8em; }
+    .calendario-nuevo .single-day .contents .info-evento .mes-evento, .calendario-nuevo .multi-day .contents .info-evento .mes-evento {
+      position: absolute;
+      top: 8px;
+      left: -10px;
+      background: #ffda00 !important;
+      width: 110px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 4px 0;
+      line-height: 1em; }
+      .calendario-nuevo .single-day .contents .info-evento .mes-evento:before, .calendario-nuevo .multi-day .contents .info-evento .mes-evento:before {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #ffda00;
+        content: ""; }
+    .calendario-nuevo .single-day .contents .info-evento .dia-evento, .calendario-nuevo .multi-day .contents .info-evento .dia-evento {
+      position: absolute;
+      top: 6px;
+      right: 14px;
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 1em; }
+    .calendario-nuevo .single-day .contents .info-evento .ciudad-evento, .calendario-nuevo .single-day .contents .info-evento .escenario-evento, .calendario-nuevo .single-day .contents .info-evento .hora-evento, .calendario-nuevo .multi-day .contents .info-evento .ciudad-evento, .calendario-nuevo .multi-day .contents .info-evento .escenario-evento, .calendario-nuevo .multi-day .contents .info-evento .hora-evento {
+      font-weight: bold; }
+    .calendario-nuevo .single-day .contents .info-evento .enlace-compra, .calendario-nuevo .multi-day .contents .info-evento .enlace-compra {
+      margin-top: 10px; }
+      .calendario-nuevo .single-day .contents .info-evento .enlace-compra a, .calendario-nuevo .multi-day .contents .info-evento .enlace-compra a {
+        color: #000000;
+        position: relative;
+        padding-left: 26px; }
+        .calendario-nuevo .single-day .contents .info-evento .enlace-compra a:before, .calendario-nuevo .multi-day .contents .info-evento .enlace-compra a:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 18px;
+          content: "+";
+          font-size: 1.2rem;
+          background: #ffda00;
+          border-radius: 15px;
+          line-height: 1em;
+          text-align: center;
+          font-weight: bold; }
+
+.section-agenda .agenda-block {
+  display: none; }
+
+@media only screen and (max-width: 780px) {
+  .section-agenda #main {
+    display: none; }
+  .section-agenda .agenda-nuevo {
+    display: block; } }

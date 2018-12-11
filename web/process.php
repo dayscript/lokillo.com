@@ -133,132 +133,157 @@ function sendMail( $destEmail, $subject) {
 	    $header .= "Content-type: text/html; charset=iso-8859-1\r\n";
       	$header .= "X-Mailer: PHP/" . phpversion();
 
-      $message = "<table cellpadding='0' cellspacing='0' border='0' width='100%' border='1' style='background:#000'>
-					<tbody>
-						<tr>
-							<td>
-								<table cellpadding='0' cellspacing='0' border='0' width='650' border='1' style='margin:0 auto;font-family:Arial,sans-serif;color:#FFF'>
-									<tbody>
-										<tr>
-											<td style='padding:5px;font-size:11px;' colspan='2'><img src='http://todounlokillo.com/sites/default/files/lokillo-logo_0_0.png'></td>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Nombre</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['name'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Apellido</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['apellidos'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Telefono</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['telefono'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Celular</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['celular'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Email</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['email'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Sitio Web</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['sitio_web'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Compañía</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['compania'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Tipo de Compañía</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['tipo_de_compania'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Pais Compañía</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['pais'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Ciudad Compañía</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['ciudad_compania'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Sitio Web Compañía</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['sitio_web_de_la_compania'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Dirección</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['direccion'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Tipo de Documento</th>
-											<td style='padding:5px;font-size:11px;'>" . getTipoDoc($_POST['tipo_de_documento']) . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Número De Documento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['numero_de_documento'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Tipo de evento</th>
-											<td style='padding:5px;font-size:11px;'>" . getTipoEvento($_POST['tipo_de_evento']) . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Descripción Experiencia</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['descripcion_experiencia'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Tiquetera</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['tiquetera'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Responsable Boletería</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['responsable_de_la_boleteria'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Cliente Final</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['cliente_final'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Objetivo del Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['objetivo_del_evento'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Agencia</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['agencia'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Marca</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['marca'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Objetivo de la Campaña</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['objetivo_de_la_campana'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>País del Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['pais_del_evento'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Ciudad del Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['ciudad'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Luga del Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['lugar_del_evento'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Fecha y Hora Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['fecha_del_evento'] . 'T' . $_POST['hora_del_evento'] . "</td>
-										</tr>
-										<tr>
-											<th style='padding:5px;font-size:11px;' align='left'>Aforo Evento</th>
-											<td style='padding:5px;font-size:11px;'>" . $_POST['aforo_del_evento'] . "</td>
-										</tr>
-									</tbody>
-								</table>
-							</td>
-						</tr>
-					</tbody>
-				</table>";
+		$message = "<table cellpadding='0' cellspacing='0' border='0' width='100%' border='1' style='background:#FFF'>
+						<tbody>
+							<tr>
+								<td style='padding: 10px 0;'>
+									<table cellpadding='0' cellspacing='10' border='0' width='650' border='1' style='margin:0 auto;font-family:Arial,sans-serif;color:#555;'>
+										<tbody>
+											<tr>
+												<td style='padding:7px 10px;font-size:13px;border-bottom:solid 1px #555;text-align:left;background:#000' colspan='2'><img src='http://todounlokillo.com/sites/default/files/lokillo-logo_0_0.png' width='210'></td>
+											</tr>
+											<tr>
+												<td colspan='2'>
+													<table cellpadding='0' cellspacing='0' border='0' width='650' border='0' style='margin:0 auto;font-family:Arial,sans-serif;'>
+														<tbody>
+															<tr>
+																<td width='30%'>&nbsp;</td>
+																<td style='background:#FFDE17;color:#000;padding:10px 50px;font-weight:bold;' width='40%'>COTIZACIÓN SHOW</td>
+																<td width='30%'>&nbsp;</td>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+											
+											<tr>
+												<td width='30%' style='padding:7px 10px;background:#949599;color:#FFF'>CONTACTO</td>
+												<td></td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Nombre</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['name'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Apellido</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['apellidos'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Telefono</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['telefono'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Celular</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['celular'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Email</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['email'] . "</td>
+											</tr>
+
+											<tr>
+												<td width='30%' style='padding:7px 10px;background:#949599;color:#FFF'>COMPAÑÍA CONTRATANTE</td>
+												<td></td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Compañía</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['compania'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Tipo de Compañía</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['tipo_de_compania'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Pais Compañía</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['pais'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Ciudad Compañía</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['ciudad_compania'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Sitio Web Compañía</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['sitio_web_de_la_compania'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Dirección</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['direccion'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Tipo de Documento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . getTipoDoc($_POST['tipo_de_documento']) . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Número De Documento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['numero_de_documento'] . "</td>
+											</tr>
+
+											<tr>
+												<td width='30%' style='padding:7px 10px;background:#949599;color:#FFF'>EVENTO</td>
+												<td></td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Tipo de evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . getTipoEvento($_POST['tipo_de_evento']) . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Descripción Experiencia</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['descripcion_experiencia'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Tiquetera</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['tiquetera'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Responsable Boletería</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['responsable_de_la_boleteria'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Cliente Final</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['cliente_final'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Objetivo del Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['objetivo_del_evento'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Agencia</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['agencia'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Marca</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['marca'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Objetivo de la Campaña</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['objetivo_de_la_campana'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>País del Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['pais_del_evento'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Ciudad del Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['ciudad'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Lugar del Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['lugar_del_evento'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Fecha y Hora Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['fecha_del_evento'] . "T" . $_POST['hora_del_evento'] . "</td>
+											</tr>
+											<tr>
+												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Aforo Evento</th>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['aforo_del_evento'] . "</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>";
 
 	    try {
 	    	mail($destEmail, $subject, $message, $header);
@@ -275,7 +300,7 @@ function sendMail( $destEmail, $subject) {
 
 	sendMail( "todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
 
-	header("Location: /gracias-por-su-contacto");
+	header("Location: /gracias-por-escribirnos");
 
 
 

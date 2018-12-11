@@ -1,6 +1,6 @@
 .footer{
   position: relative;
-  background-image: url("../images/pie-de-pagina.jpg");
+  background-image: url("../images/pie-de-pagina2.jpg");
   background-size: cover;
   &:before {
     position: absolute;
@@ -18,16 +18,18 @@
     position: relative;
     display: block;
     margin-bottom: 48px;
-    &:after{
-      content: "";
-      width: 48px;
-      height: 2px;
-      bottom: -16px;
-      left: 50%;
-      background-color: #00f0fd;
-      position: absolute;
-      margin-left: -24px;
-    }
+    color: $secondary-color;
+    font-size: 1.4rem;
+    // &:after{
+    //   content: "";
+    //   width: 48px;
+    //   height: 2px;
+    //   bottom: -16px;
+    //   left: 50%;
+    //   background-color: #00f0fd;
+    //   position: absolute;
+    //   margin-left: -24px;
+    // }
   }
   h3
   .contact {
