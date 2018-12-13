@@ -148,7 +148,7 @@ function sendMail( $destEmail, $subject) {
 														<tbody>
 															<tr>
 																<td width='30%'>&nbsp;</td>
-																<td style='background:#FFDE17;color:#000;padding:10px 50px;font-weight:bold;' width='40%'>COTIZACIÓN SHOW</td>
+																<td style='background:#FFDE17;color:#000;padding:10px 50px;font-weight:bold;text-align:center;' width='40%'>COTIZACIÓN SHOW</td>
 																<td width='30%'>&nbsp;</td>
 															</tr>
 														</tbody>

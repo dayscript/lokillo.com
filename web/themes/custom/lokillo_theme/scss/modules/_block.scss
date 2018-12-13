@@ -50,6 +50,9 @@
 
 #block-quicktabsmultimediahomepage {
   position: relative;
+  h4 {
+    position: relative;
+  }
   ul.quicktabs-tabs {
     margin-top: 0;
     position: absolute;
@@ -138,7 +141,10 @@
   .quicktabs-wrapper {
     text-align: center;
   }
-  //position: relative;
+  h4 {
+    position: relative;
+    text-align: left;
+  }
   ul.quicktabs-tabs {
     margin-top: 0;
     margin-bottom: 40px;
@@ -223,6 +229,65 @@
   }
 }
 
+
+.video-embed-field-launch-modal {
+  a {
+    display: block;
+    position: relative;
+    &:hover {
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: $black;
+        opacity: 0.4;
+        text-align: center;
+        vertical-align: middle;
+      }
+      &:after {
+        position: absolute;
+        opacity: 1;
+        bottom: 50%;
+        left: 0;
+        right: 0;
+        margin-bottom: -35px;
+        line-height: 1em;
+        font-size: 5em;
+        content: "+";
+        text-align: center;
+        transition: all .3s ease;
+      }
+    }
+    &:after {
+      position: absolute;
+      bottom: 5%;
+      opacity: 0;
+      left: 0;
+      right: 0;
+      margin-bottom: -45px;
+      line-height: 1em;
+      font-size: 5em;
+      content: "+";
+      text-align: center;
+    }
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: $black;
+      opacity: 0;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
 //Noticias
 .fecha {
   font-size: 0.9em;
@@ -282,6 +347,10 @@ ul.pagination {
     margin-bottom: 20px;
     padding-top: 10px;
   }
+}
+
+#block-titulodelapagina {
+  background-color: #000;
 }
 
 .section-galerias, .node--type-video-2 {
@@ -357,6 +426,7 @@ ul.pagination {
 
   .columns {
     margin-bottom: 1em;
+    min-height: 150px;
   }
 
   .fecha-evento {
@@ -625,23 +695,181 @@ nav.pager {
   }
 }
 
+
+#block-lokillo-theme-content {
+  ul.js-pager__items {
+    margin-bottom: 2em;
+    line-height: 1em;
+    li.pager__item {
+      a {
+        color: #EEE !important;
+      }
+    }
+    li.pager__item--current {
+      position: relative;
+      margin-bottom: 30px;
+      background: $secondary-color;
+      color: #000;
+      display: inline-block;
+      padding: 8px 35px;
+      &:before {
+        position: absolute;
+        top: 22px;
+        left: 8px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid #D2AB28;
+        content: "";
+        transform: rotate(135deg);
+      } 
+      &:after {
+        position: absolute;
+        top: 22px;
+        right: 8px;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid #D2AB28;
+        content: "";
+        transform: rotate(45deg);
+      } 
+    }
+    li.pager__item--previous, li.pager__item--next {
+      a {
+        margin-top: 3em;
+        display: inline-block;
+      }
+    }
+  }
+}
+
 .calendario-nuevo {
+
+  thead {
+    th {
+      position: relative;
+      background: none !important;
+      border: none !important;
+      text-align: left !important;
+      padding-left: 29px !important;
+      z-index: 1;
+      color: #000 !important;
+      &:before {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 90px;
+        height: 22px;
+        content: "";
+        background: $secondary-color;
+        z-index: -1;
+      }
+      &:after {
+        position: absolute;
+        top: 16px;
+        left: 4px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        border-right: 10px solid #ffda00;
+        content: "";
+      }
+    }
+  }
+
+
+  .date-box {
+    z-index: 10;
+    .day, .day a {
+      color: #000 !important;
+      font-weight: bold;
+      font-size: 1.6rem;
+      line-height: 1em;
+    }
+  }
+
+  .month-view {
+    .full {
+      td {
+        padding: 6px 10px;
+        border: none;
+      }
+      td.date-box.empty {
+        background: none;
+        .day, .day a {
+          color: #999 !important;
+        }
+      }
+    }
+  }
+
+  tr.date-box:nth-child(1) {  
+    td {
+      .inner {
+        margin-top: -33px;
+      }
+    }
+  }
+
+  tr.single-day:nth-child(2) {
+    td {
+      .inner {
+        margin-top: -60px !important;
+      } 
+    }
+  }
+
+  td.date-box.today {
+    border: none !important;
+  }
+
+  td.single-day.today {
+    border: none !important;
+  }
+
   .single-day, .multi-day {
+
+
+    .inner {
+      margin: -38px 0.3em 0;
+      background: #FFF;
+      width: 100%;
+      min-height: 127px !important;
+      -webkit-border-bottom-right-radius: 10px;
+      -webkit-border-bottom-left-radius: 10px;
+      -moz-border-radius-bottomright: 10px;
+      -moz-border-radius-bottomleft: 10px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+      div.calendar {
+        margin: 0;
+      }
+    }
+
     .contents {
       position: relative;
+      text-indent: -9999px;
       .info-evento {
-        margin-top: -55px;
-        background: $white !important;
+        // margin-top: -50px;
+        position: absolute;  
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: $black;   
+        padding: 38px 15px 15px;
+        font-size: 0.8em;
+        text-indent: 0;
+        // background: $white !important;
         -webkit-border-bottom-right-radius: 10px;
         -webkit-border-bottom-left-radius: 10px;
         -moz-border-radius-bottomright: 10px;
         -moz-border-radius-bottomleft: 10px;
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        color: $black;   
-        position: relative;  
-        padding: 38px 15px 15px;
-        font-size: 0.8em;
         .mes-evento {
           position: absolute;
           top: 8px;
@@ -679,14 +907,14 @@ nav.pager {
         }
 
         .enlace-compra {
-          margin-top: 10px;
+          margin-top: 6px;
           a {
             color: $black;
             position: relative;
             padding-left: 26px;
             &:before {
               position: absolute;
-              top: 0;
+              top: -2px;
               left: 0;
               width: 18px;
               content: "+";
@@ -720,6 +948,9 @@ nav.pager {
     
     .agenda-nuevo {
       display: block;
+      .block-title {
+        display: none;
+      }
     }
   }
 }
