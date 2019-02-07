@@ -1,5 +1,26 @@
 <?php
 
+header('Content-type: text/html; charset=utf-8');
+
+// echo "<pre>";
+// print_r( $_POST );
+// echo "</pre>";
+
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'libraries/phpmailer/src/Exception.php';
+require 'libraries/phpmailer/src/PHPMailer.php';
+require 'libraries/phpmailer/src/SMTP.php';
+
+
+
+
+//##########################################
+
+
 $url = "http://process.grupotesta.com.co/WSlokillo/API/SolicitudLokillo";
 
 
@@ -115,6 +136,10 @@ function getTipoEvento( $evento ) {
 		case '4':
 			return "Campaña publicitaria";
 			break;
+
+		case '6':
+			return "Gira";
+			break;
 		
 		default:
 			return "Otro";
@@ -122,34 +147,125 @@ function getTipoEvento( $evento ) {
 	}
 }
 
+function traductor( $str ) {
+	switch ( $str ) {
+		case 'Sunday':
+			return "Domingo";
+			break;
+
+		case 'Monday':
+			return "Lunes";
+			break;
+
+		case 'Tuesday':
+			return "Martes";
+			break;
+
+		case 'Wednesday':
+			return "Miércoles";
+			break;
+
+		case 'Thursday':
+			return "Jueves";
+			break;
+
+		case 'Friday':
+			return "Viernes";
+			break;
+
+		case 'Saturday':
+			return "Sábado";
+			break;
+
+		case 'January':
+			return "Enero";
+			break;
+
+		case 'February':
+			return "Febrero";
+			break;
+
+		case 'March':
+			return "Marzo";
+			break;
+
+		case 'April':
+			return "Abril";
+			break;
+
+		case 'May':
+			return "Mayo";
+			break;
+
+		case 'June':
+			return "Junio";
+			break;
+
+		case 'July':
+			return "Julio";
+			break;
+
+		case 'August':
+			return "Agosto";
+			break;
+
+		case 'Septembre':
+			return "Septiembre";
+			break;
+
+		case 'October':
+			return "Octubre";
+			break;
+
+		case 'November':
+			return "Noviembre";
+			break;
+
+		case 'December':
+			return "Diciembre";
+			break;
+		
+		default:
+			return $str;
+			break;
+	}
+}
+
 
 function sendMail( $destEmail, $subject) {
 
-	    $header = "Reply-To: Todo Un Lokillo <no-reply@todounlokillo.com>\r\n";
-	    $header .= "Return-Path: Todo Un Lokillo <no-reply@todounlokillo.com>\r\n";
-	    $header .= "From: Todo Un Lokillo <no-reply@todounlokillo.com>\r\n";
-	    $header .= "Organization: Todo Un Lokillo\r\n";
-	    $header .= "MIME-Version: 1.0\r\n";
-	    $header .= "Content-type: text/html; charset=iso-8859-1\r\n";
-      	$header .= "X-Mailer: PHP/" . phpversion();
+		$date = $_POST['fecha_del_evento'];
+
+		$newDate = traductor(date("l", strtotime($date))) . date(", j", strtotime($date)) . " de " .  traductor(date("F", strtotime($date))) . " de " . date("Y", strtotime($date));
+
+		if ( $newDate == "Jueves, 1 de Enero de 1970" ) {
+			$newDate = "";
+		}
+
+	    // $header = "From: Lokillo <contacto@todounlokillo.com>\r\n";
+	    // $header .= "Reply-To: Lokillo <contacto@todounlokillo.com>\r\n";
+	    // $header .= "Return-Path: Lokillo <contacto@todounlokillo.com>\r\n";
+	    // $header .= "Organization: Lokillo\r\n";
+	    // $header .= "MIME-Version: 1.0\r\n";
+	    // $header .= "Content-type: text/html; charset=utf-8\r\n";
+	    // $header .= "X-Priority: 3\r\n";
+     //  	$header .= "X-Mailer: PHP" . phpversion() . "\r\n";
 
 		$message = "<table cellpadding='0' cellspacing='0' border='0' width='100%' border='1' style='background:#FFF'>
 						<tbody>
 							<tr>
 								<td style='padding: 10px 0;'>
-									<table cellpadding='0' cellspacing='10' border='0' width='650' border='1' style='margin:0 auto;font-family:Arial,sans-serif;color:#555;'>
+									<table cellpadding='0' cellspacing='0' border='0' width='650' border='1' style='margin:0 auto;font-family:Arial,sans-serif;color:#555;'>
 										<tbody>
 											<tr>
-												<td style='padding:7px 10px;font-size:13px;border-bottom:solid 1px #555;text-align:left;background:#000' colspan='2'><img src='http://todounlokillo.com/sites/default/files/lokillo-logo_0_0.png' width='210'></td>
+												<td style='padding:7px 10px;font-size:13px;border-bottom:solid 1px #555;text-align:left;background:#000' colspan='2'><img src='http://www.lokillo.com.co/sites/default/files/lokillo-logo_0_0.png' width='210'></td>
 											</tr>
 											<tr>
 												<td colspan='2'>
 													<table cellpadding='0' cellspacing='0' border='0' width='650' border='0' style='margin:0 auto;font-family:Arial,sans-serif;'>
 														<tbody>
 															<tr>
-																<td width='30%'>&nbsp;</td>
 																<td style='background:#FFDE17;color:#000;padding:10px 50px;font-weight:bold;text-align:center;' width='40%'>COTIZACIÓN SHOW</td>
-																<td width='30%'>&nbsp;</td>
 															</tr>
 														</tbody>
 													</table>
@@ -272,36 +388,113 @@ function sendMail( $destEmail, $subject) {
 											</tr>
 											<tr>
 												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Fecha y Hora Evento</th>
-												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['fecha_del_evento'] . "T" . $_POST['hora_del_evento'] . "</td>
+												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $newDate . " - " . $_POST['hora_del_evento'] . "</td>
 											</tr>
 											<tr>
 												<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Aforo Evento</th>
 												<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $_POST['aforo_del_evento'] . "</td>
-											</tr>
-										</tbody>
-									</table>
-								</td>
-							</tr>
-						</tbody>
+											</tr>";
+
+ 											$conta = 1;
+											foreach ($_POST['evento_de_gira']['items'] as $dia) {
+
+
+												if ( $dia['fecha_evento_gira'] != "" ) {
+													
+													$fecha_evento = $dia['fecha_evento_gira'];
+													$fecha_evento = traductor(date("l", strtotime($fecha_evento))) . date(", j", strtotime($fecha_evento)) . " de " .  traductor(date("F", strtotime($fecha_evento))) . " de " . date("Y", strtotime($fecha_evento));
+												
+													$message .= "<tr>
+																	<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;background:#FFDE17;' align='left'>GIRA - Día " . $conta . "</th>
+																	<td></td>
+																</tr>
+																<tr>
+																	<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Fecha y Hora</th>
+																	<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $fecha_evento . " - " . $dia['hora_evento_gira'] . "</td>
+																</tr>
+																<tr>
+																	<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Aforo</th>
+																	<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $dia['aforo_evento_gira'] . "</td>
+																</tr>
+																<tr>
+																	<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Ciudad</th>
+																	<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $dia['ciudad_evento_gira'] . "</td>
+																</tr>
+																<tr>
+																	<th width='30%' style='border:solid 1px #D2D3D5;color:#000;padding:7px 10px;font-size:13px;' align='left'>Lugar</th>
+																	<td style='padding:7px 10px;font-size:13px;border:solid 1px #D2D3D5;'>" . $dia['lugar_evento_gira'] . "</td>
+																</tr>";
+
+												}
+												$conta++;
+											}
+
+		$message .= "					</tbody>
+					 				</table>
+					 			</td>
+					 		</tr>
+					 	</tbody>
 					</table>";
 
-	    try {
-	    	mail($destEmail, $subject, $message, $header);
-	    	echo "<script>alert('¡Gracias por tu mensaje! Pronto nos pondremos en contacto.')</script>";
-	    } catch (Exception $e) {
-			echo 'Lo sentimos, algo sucedió en el proceso de envío del mensaje. Por favor inténtalo de nuevo en unos momentos.';
+
+		$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+    	$mail->CharSet = "UTF-8";
+		// $mail->Encoding = "16bit";
+
+		try {
+		    //Server settings
+		    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+		    $mail->isSMTP();                                      // Set mailer to use SMTP
+		    $mail->Host = 'smtp.gmail.com';						  // Specify main and backup SMTP servers
+		    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+		    $mail->Username = 'todounlokillo.general@gmail.com';                 // SMTP username
+		    $mail->Password = 'lokillo12345';                           // SMTP password
+		    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+		    $mail->Port = 587;                                    // TCP port to connect to
+
+		    //Recipients
+		    $mail->setFrom('todounlokillo.general@gmail.com', 'Lokillo');
+		    
+		    $mail->addAddress("karen.gutierrez@pianoproducciones.com");
+		    $mail->addAddress("todounlokillo.general@gmail.com");
+		    $mail->addAddress("asilva@grupolaestacion.com");
+		    $mail->addAddress("jarman.corredor@linkdigital.co");
+		    $mail->addAddress("fcafiel@dayscript.com");
+		    
+		    // $mail->addReplyTo('fcaffield2@gmail.com', 'Information');
+		    // $mail->addCC('cc@example.com');
+		    // $mail->addBCC('bcc@example.com');
+
+		    
+
+		    //Content
+		    $mail->isHTML(true);                                  // Set email format to HTML
+		    $mail->Subject = "Nueva solicitud de cotización";
+		    $mail->Body    = $message;
+
+		    $mail->send();
+		    echo "<script>alert('¡Gracias por tu mensaje! Pronto nos pondremos en contacto.')</script>";
+			header("Location: /gracias-por-escribirnos");
+		} catch (Exception $e) {
+		    echo '<script>alert("Lo sentimos, algo sucedió en el proceso de envío del mensaje. Por favor inténtalo de nuevo en unos momentos.");</script>';
 		}
+
+
+
+
+
+
+	 //    try {
+	 //    	mail($destEmail, $subject, $message, $header);
+	 //    	echo "<script>alert('¡Gracias por tu mensaje! Pronto nos pondremos en contacto.')</script>";
+	 //    } catch (Exception $e) {
+		// 	echo 'Lo sentimos, algo sucedió en el proceso de envío del mensaje. Por favor inténtalo de nuevo en unos momentos.';
+		// }
 	}
 
-	// if (isset( $_POST['nombres'] ) && $_POST['nombres'] != "" &&
-	// 	isset( $_POST['email'] ) && $_POST['email'] != "") {
-	// 	sendMail( "fcaffield2@gmail.com", "Nuevo mensaje de contacto" );
-	// }
 
-	sendMail( "todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
-
-	header("Location: /gracias-por-escribirnos");
-
+	sendMail( "karen.gutierrez@pianoproducciones.com,todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
+	// sendMail( "fcafiel@dayscript.com", "Nueva solicitud de cotización" );
 
 
 

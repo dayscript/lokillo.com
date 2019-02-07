@@ -7018,11 +7018,12 @@ ul.social-media-links--platforms.platforms.inline.horizontal {
 
 .video-container {
   background-image: url("../images/bg-video.jpg");
-  background-size: cover; }
+  background-size: cover;
+  text-align: center; }
   .video-container h2 {
     color: #ffda00; }
   .video-container .video-player {
-    margin: 24px 0; }
+    margin: 24px auto; }
 
 .galeria {
   padding: 52px 0.9375rem; }
@@ -7279,13 +7280,14 @@ ul.pagination {
     padding-top: 10px; } }
 
 #block-titulodelapagina {
-  background-color: #000; }
+  background-color: #000;
+  background-position: center; }
 
 .section-galerias .title-page, .node--type-video-2 .title-page {
   background-image: url("../images/bg-galeria.jpg"); }
 
 .section-biografia-lokillo-florez .title-page, .section-en-lokeando .title-page, .section-descargas .title-page {
-  background-image: url("../images/bg-veapues2.jpg"); }
+  background-image: url("../images/bg-veapues.jpg"); }
 
 .section-rastacuando .title-page {
   background-image: url("../images/bg-rastacuando.jpg"); }
@@ -7447,6 +7449,12 @@ nav.pager {
 
 .section-cotizar-show .js-form-type-tel .country .country-name {
   color: #999; }
+
+.section-cotizar-show .form-item-evento-de-gira .tabledrag-toggle-weight {
+  display: none; }
+
+.section-cotizar-show .form-item-evento-de-gira .webform-multiple-table--aforo_evento_gira {
+  width: 140px; }
 
 .field-node--field-galeria-de-videos .field-item {
   display: inline-block;
@@ -7638,7 +7646,7 @@ nav.pager {
     left: 0;
     width: 100%;
     color: #000000;
-    padding: 38px 15px 15px;
+    padding: 35px 9px 15px;
     font-size: 0.8em;
     text-indent: 0;
     -webkit-border-bottom-right-radius: 10px;

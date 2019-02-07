@@ -15,12 +15,14 @@
 .video-container {
   background-image: url("../images/bg-video.jpg");
   background-size: cover;
+  text-align: center;
   // max-height: 540px;
   h2 {
     color: $secondary-color;
   }
   .video-player {
-    margin: 24px 0;
+    margin: 24px auto;
+    // display: inline-block;
   }
 }
 
@@ -351,6 +353,7 @@ ul.pagination {
 
 #block-titulodelapagina {
   background-color: #000;
+  background-position: center;
 }
 
 .section-galerias, .node--type-video-2 {
@@ -361,7 +364,7 @@ ul.pagination {
 
 .section-biografia-lokillo-florez, .section-en-lokeando, .section-descargas {
   .title-page {
-    background-image: url("../images/bg-veapues2.jpg");
+    background-image: url("../images/bg-veapues.jpg");
   }
 }
 
@@ -606,6 +609,14 @@ nav.pager {
       .country-name {
         color: #999;
       }
+    }
+  }
+  .form-item-evento-de-gira {
+    .tabledrag-toggle-weight {
+      display: none;
+    }
+    .webform-multiple-table--aforo_evento_gira {
+      width: 140px;
     }
   }
 }
@@ -860,7 +871,7 @@ nav.pager {
         left: 0;
         width: 100%;
         color: $black;   
-        padding: 38px 15px 15px;
+        padding: 35px 9px 15px;
         font-size: 0.8em;
         text-indent: 0;
         // background: $white !important;
