@@ -23,6 +23,13 @@ require 'libraries/phpmailer/src/SMTP.php';
 
 $url = "http://process.grupotesta.com.co/WSlokillo/API/SolicitudLokillo";
 
+//$_POST['celular']=null;
+$nombre 	=	$_POST['name'];
+$apellido 	=	$_POST['apellidos'];
+$telefono 	=	$_POST['telefono'];
+$celular 	=	$_POST['celular'];
+$email 		=	$_POST['email'];
+
 
 $data = array(
 
@@ -454,6 +461,8 @@ function sendMail( $destEmail, $subject) {
 
 		    //Recipients
 		    $mail->setFrom('todounlokillo.general@gmail.com', 'Lokillo');
+
+
 		    
 		    $mail->addAddress("karen.gutierrez@pianoproducciones.com");
 		    $mail->addAddress("todounlokillo.general@gmail.com");
@@ -461,7 +470,6 @@ function sendMail( $destEmail, $subject) {
 		    $mail->addAddress("jarman.corredor@linkdigital.co");
 		    $mail->addAddress("fcafiel@dayscript.com");
 		    
-		    // $mail->addReplyTo('fcaffield2@gmail.com', 'Information');
 		    // $mail->addCC('cc@example.com');
 		    // $mail->addBCC('bcc@example.com');
 
@@ -475,26 +483,24 @@ function sendMail( $destEmail, $subject) {
 		    $mail->send();
 		    echo "<script>alert('¡Gracias por tu mensaje! Pronto nos pondremos en contacto.')</script>";
 			header("Location: /gracias-por-escribirnos");
+
+			
+
 		} catch (Exception $e) {
 		    echo '<script>alert("Lo sentimos, algo sucedió en el proceso de envío del mensaje. Por favor inténtalo de nuevo en unos momentos.");</script>';
 		}
 
 
-
-
-
-
-	 //    try {
-	 //    	mail($destEmail, $subject, $message, $header);
-	 //    	echo "<script>alert('¡Gracias por tu mensaje! Pronto nos pondremos en contacto.')</script>";
-	 //    } catch (Exception $e) {
-		// 	echo 'Lo sentimos, algo sucedió en el proceso de envío del mensaje. Por favor inténtalo de nuevo en unos momentos.';
-		// }
 	}
 
+	if($nombre != "" && $apellido != "" && $telefono != "" && $celular != "" && $email != ""){
 
-	sendMail( "karen.gutierrez@pianoproducciones.com,todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
-	// sendMail( "fcafiel@dayscript.com", "Nueva solicitud de cotización" );
+		sendMail( "karen.gutierrez@pianoproducciones.com,todounlokillo.general@gmail.com,asilva@grupolaestacion.com,jarman.corredor@linkdigital.co,fcafiel@dayscript.com", "Nueva solicitud de cotización" );
+	
+	} else {
+		echo "<script type='text/javascript'>alert('Por favor completa todos los campos del formulario e intenta nuevamente');</script>";
+		echo "<script type='text/javascript'>history.go(-1);</script>";				
+	}	
 
 
 
