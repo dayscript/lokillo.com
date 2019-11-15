@@ -468,7 +468,7 @@ function sendMail( $destEmail, $subject) {
 		    $mail->addAddress("todounlokillo.general@gmail.com");
 		    $mail->addAddress("asilva@grupolaestacion.com");
 		    $mail->addAddress("jarman.corredor@linkdigital.co");
-		    $mail->addAddress("fcafiel@dayscript.com");
+		    // $mail->addAddress("fcafiel@dayscript.com");
 		    
 		    // $mail->addCC('cc@example.com');
 		    // $mail->addBCC('bcc@example.com');
